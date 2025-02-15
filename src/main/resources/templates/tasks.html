@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
+</head>
+<body>
+    <main>
+       <h1>Tasks <span th:text="${tasks.size()}"></span></h1>
+        <div>
+            <form action="/tasks" method="post">
+                <label>
+                    <span>Title</span>
+                    <input type="text" name="title">
+                </label>
+                <button type="submit">Add</button>
+            </form>
+        </div>
+       <div th:each="task : ${tasks}">
+           <p th:text="${task}"></p>
+       </div>
+    </main>
+</body>
+</html>
